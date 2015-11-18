@@ -35,7 +35,7 @@ class  Person {
         self.name = name
     }
     
-    func dictionaryCopy(person: Person) -> [String: AnyObject] {
+    func dictionaryCopy() -> [String: AnyObject] {
         let dictionary: [String: AnyObject] = [
             kName: name,
             kPairNumber: pairNumber

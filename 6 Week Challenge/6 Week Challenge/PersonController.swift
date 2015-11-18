@@ -20,9 +20,51 @@ class  PersonController  {
         self.loadFromPersistentStorage()
     }
     
+    func shufflePeople(var people: [Person]) {
+        let numPeople = people.count
+        if numPeople < 2 {
+            self.people = people
+        } else {
+            for idx in 0..<people.count {
+                let rnd = Int(arc4random_uniform(UInt32(idx)))
+                if rnd != idx {
+                    swap(&people[idx], &people[rnd])
+                }
+            }
+        }
+    }
+    
     func randomizePairs() {
-      
+        let numPeople = self.people.count
+        let numPairs = numPeople / 2
         
+        self.people.shuffle()
+        
+        if numPeople % 2 == 0 {
+            var index = 0
+            for pair in 1...numPairs {
+                let person1 = self.people[index]
+                index++
+                let person2 = self.people[index]
+                index++
+                
+                person1.pairNumber = pair
+                person2.pairNumber = pair
+            }
+        } else {
+            var index = 0
+            for pair in 1...numPairs {
+                let person1 = self.people[index]
+                index++
+                let person2 = self.people[index]
+                index++
+                
+                person1.pairNumber = pair
+                person2.pairNumber = pair
+            }
+            let oddPerson = self.people[numPeople - 1]
+            oddPerson.pairNumber = numPairs + 1
+        }
     }
     
     func addPerson(person: Person) {
@@ -52,4 +94,18 @@ class  PersonController  {
         }
     }
     
+}
+
+
+
+extension Array
+{
+    /** Randomizes the order of an array's elements. */
+    mutating func shuffle()
+    {
+        for _ in 0..<10
+        {
+            sortInPlace { (_,_) in arc4random() < arc4random() }
+        }
+    }
 }

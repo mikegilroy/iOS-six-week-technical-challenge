@@ -21,12 +21,19 @@ class AddNewViewController: UIViewController {
     
     @IBAction func addButtonTapped(sender: AnyObject) {
         if let name = self.nameTextField.text {
+            if let oldPerson = self.person {
+                PersonController.sharedInstance.removePerson(oldPerson)
+            }
             let newPerson = Person(name: name)
             PersonController.sharedInstance.addPerson(newPerson)
             self.navigationController?.popToRootViewControllerAnimated(true)
         }
     }
     
+    
+    func updateWithPerson(person: Person) {
+        self.nameTextField.text = person.name
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

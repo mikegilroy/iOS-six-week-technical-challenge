@@ -44,7 +44,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="hUR-ki-e9u" kind="show" id="6Uc-Vy-IFW"/>
+                                    <segue destination="hUR-ki-e9u" kind="show" identifier="editPerson" id="6Uc-Vy-IFW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -21,14 +21,7 @@ class  PersonController  {
     }
     
     func randomizePairs() {
-        let numberOfPeople = people.count
-        let numberOfPairs = numberOfPeople / 2
-        
-        if numberOfPeople % 2 == 0 {
-            
-        } else {
-            
-        }
+      
         
     }
     

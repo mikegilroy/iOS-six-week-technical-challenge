@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		10E47EF21BFD168D009C3F82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E47EF11BFD168D009C3F82 /* AppDelegate.swift */; };
-		10E47EF41BFD168D009C3F82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E47EF31BFD168D009C3F82 /* ViewController.swift */; };
 		10E47EF71BFD168D009C3F82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E47EF51BFD168D009C3F82 /* Main.storyboard */; };
 		10E47EF91BFD168D009C3F82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10E47EF81BFD168D009C3F82 /* Assets.xcassets */; };
 		10E47EFC1BFD168D009C3F82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E47EFA1BFD168D009C3F82 /* LaunchScreen.storyboard */; };
+		10E47F041BFD1820009C3F82 /* PairListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E47F031BFD1820009C3F82 /* PairListTableViewController.swift */; };
+		10E47F061BFD183C009C3F82 /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E47F051BFD183C009C3F82 /* AddNewViewController.swift */; };
+		10E47F091BFD1879009C3F82 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E47F081BFD1879009C3F82 /* Person.swift */; };
+		10E47F0B1BFD1889009C3F82 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E47F0A1BFD1889009C3F82 /* PersonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10E47EEE1BFD168D009C3F82 /* 6 Week Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "6 Week Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E47EF11BFD168D009C3F82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		10E47EF31BFD168D009C3F82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10E47EF61BFD168D009C3F82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10E47EF81BFD168D009C3F82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10E47EFB1BFD168D009C3F82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10E47EFD1BFD168D009C3F82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10E47F031BFD1820009C3F82 /* PairListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PairListTableViewController.swift; path = ../PairListTableViewController.swift; sourceTree = "<group>"; };
+		10E47F051BFD183C009C3F82 /* AddNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
+		10E47F081BFD1879009C3F82 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		10E47F0A1BFD1889009C3F82 /* PersonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +61,32 @@
 			isa = PBXGroup;
 			children = (
 				10E47EF11BFD168D009C3F82 /* AppDelegate.swift */,
-				10E47EF31BFD168D009C3F82 /* ViewController.swift */,
 				10E47EF51BFD168D009C3F82 /* Main.storyboard */,
+				10E47F071BFD1840009C3F82 /* Views */,
+				10E47F0C1BFD188E009C3F82 /* Model */,
 				10E47EF81BFD168D009C3F82 /* Assets.xcassets */,
 				10E47EFA1BFD168D009C3F82 /* LaunchScreen.storyboard */,
 				10E47EFD1BFD168D009C3F82 /* Info.plist */,
 			);
 			path = "6 Week Challenge";
+			sourceTree = "<group>";
+		};
+		10E47F071BFD1840009C3F82 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				10E47F031BFD1820009C3F82 /* PairListTableViewController.swift */,
+				10E47F051BFD183C009C3F82 /* AddNewViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		10E47F0C1BFD188E009C3F82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10E47F081BFD1879009C3F82 /* Person.swift */,
+				10E47F0A1BFD1889009C3F82 /* PersonController.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10E47EF41BFD168D009C3F82 /* ViewController.swift in Sources */,
 				10E47EF21BFD168D009C3F82 /* AppDelegate.swift in Sources */,
+				10E47F061BFD183C009C3F82 /* AddNewViewController.swift in Sources */,
+				10E47F091BFD1879009C3F82 /* Person.swift in Sources */,
+				10E47F0B1BFD1889009C3F82 /* PersonController.swift in Sources */,
+				10E47F041BFD1820009C3F82 /* PairListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

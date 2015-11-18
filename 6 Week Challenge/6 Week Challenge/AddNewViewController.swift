@@ -10,6 +10,20 @@ import UIKit
 
 class AddNewViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    
+    // MARK: Actions
+    
+    @IBAction func addButtonTapped(sender: AnyObject) {
+        if let name = self.nameTextField.text {
+            let newPerson = Person(name: name)
+            PersonController.sharedInstance.people.append(newPerson)
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

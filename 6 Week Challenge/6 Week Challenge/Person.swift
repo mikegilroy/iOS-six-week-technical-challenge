@@ -21,17 +21,16 @@ class  Person {
     }
     
     init?(dictionary: [String: AnyObject]) {
-        guard let name = dictionary[kName] as? String else {
+        guard let name = dictionary[kName] as? String,
+        let pairNumber = dictionary[kPairNumber] as? Int
+        else {
             self.name = ""
             self.pairNumber = 1
             
             return nil
         }
         
-        if let pairNumber = dictionary[kPairNumber] as? Int {
-            self.pairNumber = pairNumber
-        }
-        
+        self.pairNumber = pairNumber
         self.name = name
     }
     

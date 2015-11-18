@@ -10,6 +10,25 @@ import UIKit
 
 class PairListTableViewController: UITableViewController {
 
+    // MARK: Properties
+
+    
+    
+    // MARK: Actions
+    
+    @IBAction func addButtonTapped(sender: AnyObject) {
+    }
+    
+    @IBAction func randomizeButtonTapped(sender: AnyObject) {
+    
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,25 +46,23 @@ class PairListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return PersonController.sharedInstance.people.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("personCell", forIndexPath: indexPath)
 
-        // Configure the cell...
-
+        let currentPerson = PersonController.sharedInstance.people[indexPath.row]
+        
+        cell.textLabel?.text = currentPerson.name
+        cell.detailTextLabel?.text = String(currentPerson.pairNumber)
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

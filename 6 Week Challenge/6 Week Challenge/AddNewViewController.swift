@@ -14,6 +14,7 @@ class AddNewViewController: UIViewController {
     // MARK: Properties/Outlets
     
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var addPersonButton: UIButton!
     
     var person: Person?
     
@@ -35,17 +36,30 @@ class AddNewViewController: UIViewController {
         self.nameTextField.text = person.name
     }
     
+    override func viewDidAppear(animated: Bool) {
+        if self.person != nil {
+            self.addPersonButton.setTitle("Update Person", forState: .Normal)
+        } else {
+            self.addPersonButton.setTitle("Add Person", forState: .Normal)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    
+
+    func updateButtonTitle() {
+        if self.person != nil {
+            self.addPersonButton.setTitle("Update Person", forState: .Normal)
+        } else {
+            self.addPersonButton.setTitle("Add Person", forState: .Normal)
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -53,7 +53,7 @@ class PairListTableViewController: UITableViewController {
         let currentPerson = PersonController.sharedInstance.people[indexPath.row]
         
         cell.textLabel?.text = currentPerson.name
-        cell.detailTextLabel?.text = String(currentPerson.pairNumber)
+        cell.detailTextLabel?.text = "Pair: \(currentPerson.pairNumber)"
         
         return cell
     }
@@ -109,6 +109,7 @@ class PairListTableViewController: UITableViewController {
                 
                 _ = detailScene.view
                 detailScene.person = person
+                detailScene.updateButtonTitle()
                 detailScene.updateWithPerson(person)
             }
         }

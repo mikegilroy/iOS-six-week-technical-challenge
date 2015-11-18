@@ -86,7 +86,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9c-M3-h6l">
                                 <rect key="frame" x="20" y="110" width="560" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Add"/>
+                                <state key="normal" title="Add Person"/>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="hUR-ki-e9u" eventType="touchUpInside" id="THS-d0-Dgq"/>
                                 </connections>
@@ -110,6 +110,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addPersonButton" destination="n9c-M3-h6l" id="ip7-Ua-iZE"/>
                         <outlet property="nameTextField" destination="ay0-iY-zzN" id="dTY-VL-8Qw"/>
                     </connections>
                 </viewController>

@@ -10,15 +10,19 @@ import UIKit
 
 class AddNewViewController: UIViewController {
 
+    
+    // MARK: Properties/Outlets
+    
     @IBOutlet weak var nameTextField: UITextField!
     
+    var person: Person?
     
     // MARK: Actions
     
     @IBAction func addButtonTapped(sender: AnyObject) {
         if let name = self.nameTextField.text {
             let newPerson = Person(name: name)
-            PersonController.sharedInstance.people.append(newPerson)
+            PersonController.sharedInstance.addPerson(newPerson)
             self.navigationController?.popToRootViewControllerAnimated(true)
         }
     }
@@ -27,7 +31,7 @@ class AddNewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -15,6 +15,11 @@ class  PersonController  {
     
     var people: [Person] = []
     
+    init() {
+        self.people = []
+        self.loadFromPersistentStorage()
+    }
+    
     func randomizePairs() {
         let numberOfPeople = people.count
         let numberOfPairs = numberOfPeople / 2
@@ -25,6 +30,18 @@ class  PersonController  {
             
         }
         
+    }
+    
+    func addPerson(person: Person) {
+        people.append(person)
+        self.saveToPersistentStorage()
+    }
+    
+    func removePerson(person: Person) {
+        if let index = people.indexOf(person) {
+            people.removeAtIndex(index)
+        }
+        self.saveToPersistentStorage()
     }
     
     

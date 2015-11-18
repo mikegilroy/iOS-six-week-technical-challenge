@@ -8,7 +8,7 @@
 
 import Foundation
 
-class  Person {
+class  Person: Equatable {
     
     let kName = "name"
     let kPairNumber = "pair"
@@ -43,4 +43,9 @@ class  Person {
     }
     
     
+}
+
+
+func ==(lhs: Person, rhs: Person) -> Bool {
+    return lhs.name == rhs.name
 }

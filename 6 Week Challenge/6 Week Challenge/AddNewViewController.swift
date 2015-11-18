@@ -50,9 +50,6 @@ class AddNewViewController: UIViewController {
         
     }
 
-    
-    
-
     func updateButtonTitle() {
         if self.person != nil {
             self.addPersonButton.setTitle("Update Person", forState: .Normal)

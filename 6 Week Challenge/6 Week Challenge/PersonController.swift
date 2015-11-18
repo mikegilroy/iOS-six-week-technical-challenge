@@ -20,20 +20,6 @@ class  PersonController  {
         self.loadFromPersistentStorage()
     }
     
-    func shufflePeople(var people: [Person]) {
-        let numPeople = people.count
-        if numPeople < 2 {
-            self.people = people
-        } else {
-            for idx in 0..<people.count {
-                let rnd = Int(arc4random_uniform(UInt32(idx)))
-                if rnd != idx {
-                    swap(&people[idx], &people[rnd])
-                }
-            }
-        }
-    }
-    
     func randomizePairs() {
         let numPeople = self.people.count
         let numPairs = numPeople / 2
@@ -79,7 +65,6 @@ class  PersonController  {
         self.saveToPersistentStorage()
     }
     
-    
     func saveToPersistentStorage() {
         let peopleDictionary = people.map({$0.dictionaryCopy()})
         NSUserDefaults.standardUserDefaults().setValue(peopleDictionary, forKey: kPeople)
@@ -90,13 +75,11 @@ class  PersonController  {
         let peopleDictionariesFromDefaults = NSUserDefaults.standardUserDefaults().objectForKey(kPeople) as? [Dictionary<String, AnyObject>]
         
         if let peopleDictionary = peopleDictionariesFromDefaults {
-            self.people = peopleDictionary.map({Person(dictionary: $0)!})
+            self.people = peopleDictionary.flatMap({Person(dictionary: $0)})
         }
     }
     
 }
-
-
 
 extension Array
 {
